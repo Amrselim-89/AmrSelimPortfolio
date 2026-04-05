@@ -1091,6 +1091,12 @@ section,
   color: var(--contrast-color);
 }
 
+.contact .map-embed {
+  border: 0;
+  width: 100%;
+  height: 270px;
+}
+
 .contact .php-email-form {
   background-color: var(--surface-color);
   height: 100%;
@@ -1272,4 +1278,270 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+/*--------------------------------------------------------------
+# BI Visual Refresh
+--------------------------------------------------------------*/
+:root {
+  --default-font: "Manrope", "Segoe UI", sans-serif;
+  --heading-font: "Space Grotesk", "Segoe UI", sans-serif;
+  --nav-font: "Manrope", "Segoe UI", sans-serif;
+
+  --background-color: #f4f8fc;
+  --default-color: #142033;
+  --heading-color: #0c182c;
+  --accent-color: #0f766e;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+
+  --nav-color: #bdd0f0;
+  --nav-hover-color: #ffffff;
+  --nav-mobile-background-color: #071326;
+  --nav-dropdown-background-color: #0b1c33;
+  --nav-dropdown-color: #c4d5f1;
+  --nav-dropdown-hover-color: #ffffff;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 8% 10%, rgba(15, 118, 110, 0.11) 0, rgba(15, 118, 110, 0) 35%),
+    radial-gradient(circle at 92% 18%, rgba(13, 110, 253, 0.09) 0, rgba(13, 110, 253, 0) 32%);
+  background-attachment: fixed;
+}
+
+.dark-background {
+  --background-color: #071326;
+  --default-color: #f4f8ff;
+  --heading-color: #ffffff;
+  --surface-color: #122641;
+}
+
+.section-title h2 {
+  letter-spacing: 0.4px;
+}
+
+.section-title h2:after {
+  width: 72px;
+  height: 4px;
+  border-radius: 999px;
+}
+
+.header {
+  background: linear-gradient(180deg, #071326 0%, #0a1a31 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header .profile-img img {
+  border: 8px solid rgba(255, 255, 255, 0.17);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+.header .social-links a {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.navmenu a,
+.navmenu a:focus {
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+
+.navmenu a:hover,
+.navmenu .active,
+.navmenu .active:focus {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero {
+  padding: 80px 0 100px;
+}
+
+.hero:before {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(15, 118, 110, 0.35), transparent 35%),
+    radial-gradient(circle at 90% 70%, rgba(13, 110, 253, 0.3), transparent 40%),
+    linear-gradient(120deg, rgba(3, 10, 20, 0.7), rgba(8, 25, 48, 0.82));
+}
+
+.hero .container {
+  max-width: 840px;
+  margin-left: 0;
+  padding: 34px;
+  border-radius: 22px;
+  backdrop-filter: blur(3px);
+  background: linear-gradient(145deg, rgba(7, 26, 49, 0.66), rgba(8, 26, 48, 0.35));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.26);
+}
+
+.hero .hero-eyebrow {
+  margin: 0 0 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: #8ec5ff;
+  font-weight: 700;
+}
+
+.hero h2 {
+  font-size: clamp(2.2rem, 5vw, 4.3rem);
+  letter-spacing: -0.5px;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.hero p span {
+  border-bottom-width: 3px;
+}
+
+.hero-cta .btn {
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.hero-cta .btn-primary {
+  background: linear-gradient(120deg, #0f766e, #0d9f8f);
+  border-color: transparent;
+}
+
+.hero-cta .btn-primary:hover {
+  background: linear-gradient(120deg, #0d9f8f, #13b5a2);
+}
+
+.hero-cta .btn-outline-light {
+  border-width: 2px;
+}
+
+.hero-highlights .hero-highlight-card {
+  height: 100%;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-highlights .hero-highlight-card span {
+  display: block;
+  color: #ffffff;
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-highlights .hero-highlight-card p {
+  margin: 7px 0 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.bi-focus .focus-card {
+  padding: 30px;
+  border-radius: 18px;
+  background: linear-gradient(170deg, #ffffff 0%, #f4fbfa 100%);
+  border: 1px solid rgba(15, 118, 110, 0.15);
+  box-shadow: 0 15px 30px rgba(12, 24, 44, 0.09);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bi-focus .focus-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 38px rgba(12, 24, 44, 0.14);
+}
+
+.bi-focus .focus-card i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  font-size: 1.35rem;
+  color: #0f766e;
+  background: rgba(15, 118, 110, 0.13);
+  margin-bottom: 18px;
+}
+
+.bi-focus .focus-card h3 {
+  font-size: 1.18rem;
+  margin-bottom: 10px;
+}
+
+.bi-focus .focus-card p {
+  margin: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  line-height: 1.7;
+}
+
+.stats .stats-item,
+.services .service-item,
+.contact .info-wrap,
+.testimonials .testimonial-item p,
+.portfolio .portfolio-content {
+  border-radius: 16px;
+}
+
+.stats .stats-item {
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(8, 22, 38, 0.08);
+}
+
+.services .service-item {
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(12, 24, 44, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services .service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 30px rgba(12, 24, 44, 0.11);
+}
+
+.portfolio .portfolio-filters li {
+  border: 1px solid rgba(15, 118, 110, 0.35);
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-weight: 600;
+}
+
+.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li.filter-active {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.testimonials .testimonial-item p {
+  border: 1px solid rgba(12, 24, 44, 0.08);
+}
+
+.contact .info-wrap {
+  border: 1px solid rgba(12, 24, 44, 0.08);
+}
+
+@media (max-width: 992px) {
+  .hero .container {
+    margin: 0 12px;
+    padding: 26px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding-top: 85px;
+  }
+
+  .hero .container {
+    padding: 20px;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+  }
 }

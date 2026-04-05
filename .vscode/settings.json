@@ -20,5 +20,6 @@
     "json.schemas": [
         
         
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
