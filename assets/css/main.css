@@ -52,6 +52,44 @@
   --contrast-color: #ffffff;
 }
 
+/* Dark Mode Theme Override */
+html[data-theme="dark"] {
+  --background-color: #111827;
+  --default-color: #d1d5db;
+  --heading-color: #f3f4f6;
+  --surface-color: #1f2937;
+  --contrast-color: #ffffff;
+}
+
+html[data-theme="dark"] .light-background {
+  --background-color: #1a2535;
+  --surface-color: #1f2937;
+}
+
+html[data-theme="dark"] .stats .stats-item {
+  background: #1f2937;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .services .service-item {
+  background: #1f2937;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme="dark"] .bi-focus .focus-card {
+  background: linear-gradient(170deg, #1f2937 0%, #162132 100%);
+  border-color: rgba(15, 118, 110, 0.25);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .testimonials .testimonial-item p {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme="dark"] .contact .info-wrap {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
@@ -450,6 +488,38 @@ h6 {
   visibility: visible;
   opacity: 1;
   bottom: 15px;
+}
+
+/*--------------------------------------------------------------
+# Dark / Light Mode Toggle
+--------------------------------------------------------------*/
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 99999;
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
+  color: var(--default-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle i {
+  font-size: 16px;
+  line-height: 0;
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 /*--------------------------------------------------------------
@@ -1366,7 +1436,7 @@ body {
 
 .hero .container {
   max-width: 840px;
-  margin-left: 0;
+  margin: 0 auto;
   padding: 34px;
   border-radius: 22px;
   backdrop-filter: blur(3px);
