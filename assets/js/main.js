@@ -187,6 +187,31 @@
   window.addEventListener("load", initSwiper);
 
   /**
+   * Dark / Light mode toggle
+   */
+  const themeToggleBtn = document.querySelector('#theme-toggle');
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    const icon = themeToggleBtn.querySelector('i');
+    if (theme === 'dark') {
+      icon.className = 'bi bi-sun-fill';
+    } else {
+      icon.className = 'bi bi-moon-stars-fill';
+    }
+  }
+
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  applyTheme(savedTheme);
+
+  themeToggleBtn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', next);
+    applyTheme(next);
+  });
+
+  /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
   window.addEventListener('load', function(e) {
