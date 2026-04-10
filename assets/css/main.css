@@ -897,6 +897,10 @@ section,
 
 .portfolio .portfolio-content img {
   transition: 0.3s;
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
 }
 
 .portfolio .portfolio-content .portfolio-info {
@@ -958,6 +962,68 @@ section,
 
 .portfolio .portfolio-content:hover img {
   transform: scale(1.1);
+}
+
+.portfolio .portfolio-chart-wrap {
+  position: relative;
+  height: 200px;
+  background-color: var(--surface-color);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px 10px;
+}
+
+.portfolio .portfolio-chart-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Chart items: static footer so canvas receives all pointer events */
+.portfolio .portfolio-content.is-chart {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio .portfolio-content.is-chart .portfolio-chart-wrap {
+  flex: 1 1 auto;
+}
+
+.portfolio .portfolio-content.is-chart .portfolio-info {
+  opacity: 1;
+  position: static;
+  background: var(--surface-color);
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 10px 14px 12px;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .portfolio .portfolio-content.is-chart .portfolio-info {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.portfolio .portfolio-content.is-chart:hover .portfolio-info {
+  opacity: 1;
+}
+
+.portfolio .portfolio-content.is-chart .portfolio-info h4 {
+  color: var(--heading-color);
+  background: none;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 700;
+  display: block;
+}
+
+.portfolio .portfolio-content.is-chart .portfolio-info p {
+  position: static;
+  color: var(--default-color);
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.65;
+  text-align: left;
+  margin: 3px 0 0;
 }
 
 /*--------------------------------------------------------------
