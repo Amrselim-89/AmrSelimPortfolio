@@ -992,11 +992,28 @@ section,
 
 .portfolio .portfolio-content.is-chart .portfolio-info {
   opacity: 1;
-  position: static;
+  position: relative;
   background: var(--surface-color);
   border-top: 1px solid rgba(0, 0, 0, 0.07);
-  padding: 10px 14px 12px;
+  padding: 10px 44px 12px 14px;
   pointer-events: none;
+}
+
+.portfolio .portfolio-content.is-chart .portfolio-info .chart-details-link {
+  pointer-events: auto;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-color);
+  font-size: 22px;
+  line-height: 1;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.portfolio .portfolio-content.is-chart .portfolio-info .chart-details-link:hover {
+  color: var(--heading-color);
+  transform: translateY(-50%) scale(1.2);
 }
 
 [data-theme="dark"] .portfolio .portfolio-content.is-chart .portfolio-info {
@@ -1024,6 +1041,23 @@ section,
   opacity: 0.65;
   text-align: left;
   margin: 3px 0 0;
+}
+
+/*--------------------------------------------------------------
+# Chart Detail Pages
+--------------------------------------------------------------*/
+.chart-detail-canvas-wrap {
+  position: relative;
+  height: 400px;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  padding: 24px 20px 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.chart-detail-canvas-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /*--------------------------------------------------------------
