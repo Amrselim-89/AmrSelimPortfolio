@@ -461,7 +461,6 @@
 
     // ── DOUGHNUT CHART — Department Coverage breakdown ───────────────────────
     const doughnutCtx = document.getElementById('chart-doughnut');
-
     if (doughnutCtx) {
       const doColors = [accent, blue, amber, '#ec4899', '#8b5cf6'];
 
