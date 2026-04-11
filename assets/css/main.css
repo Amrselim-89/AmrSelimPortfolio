@@ -992,7 +992,7 @@ section,
 
 .portfolio .portfolio-content.is-chart .portfolio-info {
   opacity: 1;
-  position: static;
+  position: relative;
   background: var(--surface-color);
   border-top: 1px solid rgba(0, 0, 0, 0.07);
   padding: 10px 14px 12px;
@@ -1024,6 +1024,24 @@ section,
   opacity: 0.65;
   text-align: left;
   margin: 3px 0 0;
+}
+
+/* Details link on chart cards */
+.portfolio .portfolio-content.is-chart .portfolio-info .details-link {
+  pointer-events: auto;
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--accent-color);
+  opacity: 0.6;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.portfolio .portfolio-content.is-chart .portfolio-info .details-link:hover {
+  opacity: 1;
+  color: var(--accent-color);
 }
 
 /*--------------------------------------------------------------
