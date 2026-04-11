@@ -529,6 +529,421 @@
         }
       }));
     }
+
+    // ── RADAR CHART — BI Competency Matrix ─────────────────────────────────
+    const radarCtx = document.getElementById('chart-radar');
+    if (radarCtx) {
+      const pink = '#ec4899';
+      _portfolioCharts.push(new Chart(radarCtx, {
+        type: 'radar',
+        data: {
+          labels: ['Data Modeling', 'DAX / SQL', 'Visualization', 'ETL / Pipelines', 'Governance', 'Stakeholder Mgmt'],
+          datasets: [
+            {
+              label: 'Current Level',
+              data: [95, 90, 92, 85, 80, 88],
+              borderColor: accent,
+              backgroundColor: accent + '33',
+              pointBackgroundColor: accent,
+              pointBorderColor: surface,
+              pointBorderWidth: 2,
+              pointRadius: 5,
+              borderWidth: 2.5
+            },
+            {
+              label: 'Industry Avg',
+              data: [70, 65, 72, 60, 65, 70],
+              borderColor: blue,
+              backgroundColor: blue + '22',
+              pointBackgroundColor: blue,
+              pointBorderColor: surface,
+              pointBorderWidth: 2,
+              pointRadius: 4,
+              borderWidth: 2,
+              borderDash: [5, 4]
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              min: 0,
+              max: 100,
+              ticks: { stepSize: 25, color: tickColor, backdropColor: 'transparent', font: { size: 9 } },
+              grid: { color: gridColor },
+              angleLines: { color: gridColor },
+              pointLabels: { color: tickColor, font: { size: 9 } }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: { padding: 14, usePointStyle: true, pointStyleWidth: 10, color: tickColor }
+            },
+            tooltip: {
+              enabled: true,
+              backgroundColor: ttBg,
+              titleColor: headColor,
+              bodyColor: defColor,
+              borderColor: accent + '55',
+              borderWidth: 1,
+              padding: 10,
+              cornerRadius: 6,
+              callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}%` }
+            }
+          }
+        }
+      }));
+    }
+
+    // ── BUBBLE CHART — Project ROI vs Complexity ────────────────────────────
+    const bubbleCtx = document.getElementById('chart-bubble');
+    if (bubbleCtx) {
+      const bubbleColors = [accent, blue, amber, '#ec4899', '#8b5cf6', '#10b981'];
+      const projects = [
+        { x: 3, y: 320, r: 18, label: 'SNB Dashboard' },
+        { x: 7, y: 540, r: 22, label: 'ETL Pipeline' },
+        { x: 5, y: 210, r: 14, label: 'KPI Report' },
+        { x: 9, y: 680, r: 26, label: 'Data Warehouse' },
+        { x: 2, y: 150, r: 10, label: 'Ad-hoc Analysis' },
+        { x: 6, y: 430, r: 18, label: 'SSRS Reports' }
+      ];
+      _portfolioCharts.push(new Chart(bubbleCtx, {
+        type: 'bubble',
+        data: {
+          datasets: projects.map((p, i) => ({
+            label: p.label,
+            data: [{ x: p.x, y: p.y, r: p.r }],
+            backgroundColor: bubbleColors[i] + 'aa',
+            borderColor: bubbleColors[i],
+            borderWidth: 2
+          }))
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'point', intersect: true },
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { padding: 8, usePointStyle: true, pointStyleWidth: 8, color: tickColor, font: { size: 9 } }
+            },
+            tooltip: {
+              enabled: true,
+              backgroundColor: ttBg,
+              titleColor: headColor,
+              bodyColor: defColor,
+              borderColor: accent + '55',
+              borderWidth: 1,
+              padding: 10,
+              cornerRadius: 6,
+              callbacks: {
+                label: ctx => ` Complexity: ${ctx.raw.x}/10 | ROI: $${ctx.raw.y}k`
+              }
+            }
+          },
+          scales: {
+            x: {
+              min: 0,
+              max: 11,
+              grid: { display: false },
+              border: { display: false },
+              ticks: { color: tickColor, callback: v => v + '/10' },
+              title: { display: true, text: 'Complexity', color: tickColor, font: { size: 10 } }
+            },
+            y: {
+              grid: { color: gridColor },
+              border: { display: false, dash: [4, 4] },
+              ticks: { color: tickColor, callback: v => '$' + v + 'k' },
+              title: { display: true, text: 'ROI ($k)', color: tickColor, font: { size: 10 } }
+            }
+          }
+        }
+      }));
+    }
+
+    // ── STACKED BAR CHART — Quarterly Sales by Region ──────────────────────
+    const stackedCtx = document.getElementById('chart-stacked');
+    if (stackedCtx) {
+      const green = '#10b981';
+      const purple = '#8b5cf6';
+      _portfolioCharts.push(new Chart(stackedCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+          datasets: [
+            {
+              label: 'Central',
+              data: [210, 240, 195, 280],
+              backgroundColor: accent + 'cc',
+              borderRadius: { topLeft: 0, topRight: 0 },
+              borderSkipped: false,
+              stack: 'revenue'
+            },
+            {
+              label: 'North',
+              data: [150, 180, 165, 200],
+              backgroundColor: blue + 'cc',
+              borderSkipped: false,
+              stack: 'revenue'
+            },
+            {
+              label: 'South',
+              data: [120, 145, 130, 160],
+              backgroundColor: amber + 'cc',
+              borderSkipped: false,
+              stack: 'revenue'
+            },
+            {
+              label: 'West',
+              data: [90, 110, 95, 130],
+              backgroundColor: green + 'cc',
+              borderRadius: { topLeft: 5, topRight: 5 },
+              borderSkipped: false,
+              stack: 'revenue'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: { padding: 10, usePointStyle: true, pointStyleWidth: 8, color: tickColor, font: { size: 10 } }
+            },
+            tooltip: {
+              enabled: true,
+              backgroundColor: ttBg,
+              titleColor: headColor,
+              bodyColor: defColor,
+              borderColor: accent + '55',
+              borderWidth: 1,
+              padding: 10,
+              cornerRadius: 6,
+              callbacks: { label: ctx => ` ${ctx.dataset.label}: $${ctx.raw}k` }
+            }
+          },
+          scales: {
+            x: { stacked: true, grid: { display: false }, border: { display: false }, ticks: { color: tickColor } },
+            y: {
+              stacked: true,
+              grid: { color: gridColor },
+              border: { display: false, dash: [4, 4] },
+              ticks: { color: tickColor, callback: v => '$' + v + 'k' }
+            }
+          }
+        }
+      }));
+    }
+
+    // ── POLAR AREA CHART — Market Segment Distribution ──────────────────────
+    const polarCtx = document.getElementById('chart-polar');
+    if (polarCtx) {
+      const polarColors = [accent, blue, amber, '#ec4899', '#8b5cf6', '#10b981'];
+      _portfolioCharts.push(new Chart(polarCtx, {
+        type: 'polarArea',
+        data: {
+          labels: ['Banking', 'Retail', 'Healthcare', 'Gov & Public', 'Telecom', 'Manufacturing'],
+          datasets: [{
+            data: [32, 22, 15, 13, 10, 8],
+            backgroundColor: polarColors.map(c => c + '99'),
+            borderColor: polarColors,
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: { animateRotate: true, duration: 900, easing: 'easeInOutQuart' },
+          scales: {
+            r: {
+              ticks: { display: false },
+              grid: { color: gridColor },
+              angleLines: { display: false }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                padding: 8,
+                boxWidth: 10,
+                usePointStyle: true,
+                pointStyle: 'circle',
+                color: tickColor,
+                font: { size: 10 }
+              }
+            },
+            tooltip: {
+              enabled: true,
+              backgroundColor: ttBg,
+              titleColor: headColor,
+              bodyColor: defColor,
+              borderColor: accent + '55',
+              borderWidth: 1,
+              padding: 10,
+              cornerRadius: 6,
+              callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw}%` }
+            }
+          }
+        }
+      }));
+    }
+
+    // ── HORIZONTAL BAR CHART — Department KPI Rankings ──────────────────────
+    const hbarCtx = document.getElementById('chart-hbar');
+    if (hbarCtx) {
+      const hbarScores = [94, 88, 82, 79, 75, 68];
+      const hbarColors = hbarScores.map(s =>
+        s >= 90 ? accent : s >= 80 ? blue : s >= 70 ? amber : '#ef4444'
+      );
+      _portfolioCharts.push(new Chart(hbarCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Operations', 'Finance', 'Sales', 'Marketing', 'Logistics', 'HR'],
+          datasets: [{
+            label: 'KPI Score',
+            data: hbarScores,
+            backgroundColor: hbarColors.map(c => c + 'cc'),
+            borderColor: hbarColors,
+            borderWidth: 1.5,
+            borderRadius: { topRight: 5, bottomRight: 5 },
+            borderSkipped: 'left'
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              enabled: true,
+              backgroundColor: ttBg,
+              titleColor: headColor,
+              bodyColor: defColor,
+              borderColor: accent + '55',
+              borderWidth: 1,
+              padding: 10,
+              cornerRadius: 6,
+              callbacks: { label: ctx => ` Score: ${ctx.raw} / 100` }
+            }
+          },
+          scales: {
+            x: {
+              min: 0,
+              max: 100,
+              grid: { color: gridColor },
+              border: { display: false, dash: [4, 4] },
+              ticks: { color: tickColor, callback: v => v + '%' }
+            },
+            y: { grid: { display: false }, border: { display: false }, ticks: { color: tickColor } }
+          }
+        }
+      }));
+    }
+
+    // ── AREA CHART — Budget vs Actual vs Forecast ───────────────────────────
+    const areaCtx = document.getElementById('chart-area');
+    if (areaCtx) {
+      const ctx2d = areaCtx.getContext('2d');
+      const aGrad1 = ctx2d.createLinearGradient(0, 0, 0, 210);
+      aGrad1.addColorStop(0, accent + '44');
+      aGrad1.addColorStop(1, accent + '00');
+      const aGrad2 = ctx2d.createLinearGradient(0, 0, 0, 210);
+      aGrad2.addColorStop(0, blue + '33');
+      aGrad2.addColorStop(1, blue + '00');
+      const aGrad3 = ctx2d.createLinearGradient(0, 0, 0, 210);
+      aGrad3.addColorStop(0, amber + '33');
+      aGrad3.addColorStop(1, amber + '00');
+      _portfolioCharts.push(new Chart(areaCtx, {
+        type: 'line',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+          datasets: [
+            {
+              label: 'Budget',
+              data: [500, 520, 510, 540, 530, 560],
+              borderColor: accent,
+              backgroundColor: aGrad1,
+              tension: 0.4,
+              fill: true,
+              pointRadius: 4,
+              pointHoverRadius: 6,
+              pointBackgroundColor: accent,
+              pointBorderColor: surface,
+              pointBorderWidth: 2,
+              borderWidth: 2.5
+            },
+            {
+              label: 'Actual',
+              data: [480, 505, 490, 560, 545, 590],
+              borderColor: blue,
+              backgroundColor: aGrad2,
+              tension: 0.4,
+              fill: true,
+              pointRadius: 4,
+              pointHoverRadius: 6,
+              pointBackgroundColor: blue,
+              pointBorderColor: surface,
+              pointBorderWidth: 2,
+              borderWidth: 2
+            },
+            {
+              label: 'Forecast',
+              data: [null, null, null, null, 565, 610],
+              borderColor: amber,
+              backgroundColor: aGrad3,
+              tension: 0.4,
+              fill: true,
+              borderDash: [6, 4],
+              pointRadius: 4,
+              pointHoverRadius: 6,
+              pointBackgroundColor: amber,
+              pointBorderColor: surface,
+              pointBorderWidth: 2,
+              borderWidth: 2,
+              spanGaps: false
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: { padding: 14, usePointStyle: true, pointStyleWidth: 10, color: tickColor }
+            },
+            tooltip: {
+              enabled: true,
+              backgroundColor: ttBg,
+              titleColor: headColor,
+              bodyColor: defColor,
+              borderColor: accent + '55',
+              borderWidth: 1,
+              padding: 10,
+              cornerRadius: 6,
+              callbacks: { label: ctx => ctx.raw !== null ? ` ${ctx.dataset.label}: $${ctx.raw}k` : null }
+            }
+          },
+          scales: {
+            x: { grid: { display: false }, border: { display: false }, ticks: { color: tickColor } },
+            y: {
+              grid: { color: gridColor },
+              border: { display: false, dash: [4, 4] },
+              ticks: { color: tickColor, callback: v => '$' + v + 'k' }
+            }
+          }
+        }
+      }));
+    }
   }
 
   window.addEventListener('load', initPortfolioCharts);
