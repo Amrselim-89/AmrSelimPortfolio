@@ -529,6 +529,293 @@
         }
       }));
     }
+
+    // ── SCATTER CHART — Customer Segmentation: Engagement vs Retention ───────
+    const scatterCtx = document.getElementById('chart-scatter');
+    if (scatterCtx) {
+      const green  = '#22c55e';
+      const red    = '#ef4444';
+      _portfolioCharts.push(new Chart(scatterCtx, {
+        type: 'scatter',
+        data: {
+          datasets: [
+            {
+              label: 'Premium',
+              data: [{x:82,y:91},{x:78,y:85},{x:90,y:88},{x:86,y:94},{x:75,y:80}],
+              backgroundColor: accent + 'cc',
+              pointRadius: 7,
+              pointHoverRadius: 9
+            },
+            {
+              label: 'Standard',
+              data: [{x:55,y:60},{x:62,y:55},{x:48,y:65},{x:70,y:58},{x:58,y:72}],
+              backgroundColor: blue + 'cc',
+              pointRadius: 7,
+              pointHoverRadius: 9
+            },
+            {
+              label: 'At-Risk',
+              data: [{x:30,y:28},{x:22,y:35},{x:38,y:20},{x:25,y:42},{x:15,y:30}],
+              backgroundColor: red + 'cc',
+              pointRadius: 7,
+              pointHoverRadius: 9
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top', labels: { padding: 12, usePointStyle: true, pointStyleWidth: 8, color: tickColor } },
+            tooltip: {
+              backgroundColor: ttBg, titleColor: headColor, bodyColor: defColor,
+              borderColor: accent + '55', borderWidth: 1, padding: 10, cornerRadius: 6,
+              callbacks: { label: ctx => ` ${ctx.dataset.label}: (${ctx.raw.x}% Eng, ${ctx.raw.y}% Ret)` }
+            }
+          },
+          scales: {
+            x: {
+              title: { display: true, text: 'Engagement %', color: tickColor, font: { size: 11 } },
+              grid: { color: gridColor }, border: { display: false },
+              ticks: { color: tickColor }, min: 0, max: 100
+            },
+            y: {
+              title: { display: true, text: 'Retention %', color: tickColor, font: { size: 11 } },
+              grid: { color: gridColor }, border: { display: false, dash: [4,4] },
+              ticks: { color: tickColor }, min: 0, max: 100
+            }
+          }
+        }
+      }));
+    }
+
+    // ── RADAR CHART — Multi-Dimension KPI Assessment ─────────────────────────
+    const radarCtx = document.getElementById('chart-radar');
+    if (radarCtx) {
+      const radarBg1 = accent + '33';
+      const radarBg2 = blue + '33';
+      _portfolioCharts.push(new Chart(radarCtx, {
+        type: 'radar',
+        data: {
+          labels: ['Delivery', 'Quality', 'Budget', 'Innovation', 'Stakeholders', 'Velocity'],
+          datasets: [
+            {
+              label: 'Q4 2024',
+              data: [88, 92, 76, 85, 90, 78],
+              borderColor: accent,
+              backgroundColor: radarBg1,
+              borderWidth: 2.5,
+              pointBackgroundColor: accent,
+              pointBorderColor: surface,
+              pointBorderWidth: 2,
+              pointRadius: 4
+            },
+            {
+              label: 'Q3 2024',
+              data: [72, 80, 68, 74, 82, 65],
+              borderColor: blue,
+              backgroundColor: radarBg2,
+              borderWidth: 2,
+              borderDash: [5, 4],
+              pointBackgroundColor: blue,
+              pointBorderColor: surface,
+              pointBorderWidth: 2,
+              pointRadius: 4
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top', labels: { padding: 12, usePointStyle: true, pointStyleWidth: 8, color: tickColor } },
+            tooltip: {
+              backgroundColor: ttBg, titleColor: headColor, bodyColor: defColor,
+              borderColor: accent + '55', borderWidth: 1, padding: 10, cornerRadius: 6
+            }
+          },
+          scales: {
+            r: {
+              min: 0, max: 100,
+              grid: { color: gridColor },
+              angleLines: { color: gridColor },
+              ticks: { color: tickColor, backdropColor: 'transparent', stepSize: 25 },
+              pointLabels: { color: tickColor, font: { size: 10 } }
+            }
+          }
+        }
+      }));
+    }
+
+    // ── POLAR AREA CHART — Market Share by Sector ────────────────────────────
+    const polarCtx = document.getElementById('chart-polar');
+    if (polarCtx) {
+      const polarColors = [accent + 'dd', blue + 'dd', amber + 'dd', '#ec4899dd', '#8b5cf6dd', '#14b8a6dd'];
+      _portfolioCharts.push(new Chart(polarCtx, {
+        type: 'polarArea',
+        data: {
+          labels: ['Banking', 'Retail', 'Healthcare', 'Telecom', 'Energy', 'Logistics'],
+          datasets: [{
+            data: [28, 19, 16, 14, 13, 10],
+            backgroundColor: polarColors,
+            borderColor: surface,
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: { animateRotate: true, duration: 900, easing: 'easeInOutQuart' },
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { padding: 8, boxWidth: 10, usePointStyle: true, pointStyle: 'circle', color: tickColor, font: { size: 10 } }
+            },
+            tooltip: {
+              backgroundColor: ttBg, titleColor: headColor, bodyColor: defColor,
+              borderColor: accent + '55', borderWidth: 1, padding: 10, cornerRadius: 6,
+              callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw}%` }
+            }
+          },
+          scales: {
+            r: {
+              grid: { color: gridColor },
+              ticks: { color: tickColor, backdropColor: 'transparent', font: { size: 9 } }
+            }
+          }
+        }
+      }));
+    }
+
+    // ── STACKED BAR — Regional Sales by Quarter ──────────────────────────────
+    const stackedCtx = document.getElementById('chart-stacked');
+    if (stackedCtx) {
+      const purple = '#8b5cf6';
+      const pink   = '#ec4899';
+      _portfolioCharts.push(new Chart(stackedCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+          datasets: [
+            { label: 'North', data: [120, 145, 132, 168], backgroundColor: accent + 'dd', stack: 'sales', borderRadius: 3, borderSkipped: false },
+            { label: 'South', data: [95,  110, 125, 140], backgroundColor: blue  + 'dd', stack: 'sales', borderRadius: 3, borderSkipped: false },
+            { label: 'East',  data: [80,   95, 105, 115], backgroundColor: amber + 'dd', stack: 'sales', borderRadius: 3, borderSkipped: false },
+            { label: 'West',  data: [60,   70,  85,  98], backgroundColor: purple+ 'dd', stack: 'sales', borderRadius: 3, borderSkipped: false }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { position: 'top', labels: { padding: 10, usePointStyle: true, pointStyleWidth: 8, color: tickColor } },
+            tooltip: {
+              backgroundColor: ttBg, titleColor: headColor, bodyColor: defColor,
+              borderColor: accent + '55', borderWidth: 1, padding: 10, cornerRadius: 6,
+              callbacks: { label: ctx => ` ${ctx.dataset.label}: $${ctx.raw}k` }
+            }
+          },
+          scales: {
+            x: { stacked: true, grid: { display: false }, border: { display: false }, ticks: { color: tickColor } },
+            y: { stacked: true, grid: { color: gridColor }, border: { display: false, dash: [4,4] }, ticks: { color: tickColor, callback: v => '$' + v + 'k' } }
+          }
+        }
+      }));
+    }
+
+    // ── BUBBLE CHART — Project Portfolio Risk vs Value Matrix ────────────────
+    const bubbleCtx = document.getElementById('chart-bubble');
+    if (bubbleCtx) {
+      const purple2 = '#8b5cf6';
+      _portfolioCharts.push(new Chart(bubbleCtx, {
+        type: 'bubble',
+        data: {
+          datasets: [
+            {
+              label: 'Strategic',
+              data: [{x:75,y:85,r:14},{x:88,y:72,r:10},{x:65,y:90,r:12}],
+              backgroundColor: accent + 'bb',
+              borderColor: accent,
+              borderWidth: 1.5
+            },
+            {
+              label: 'Operational',
+              data: [{x:50,y:55,r:9},{x:60,y:48,r:7},{x:45,y:62,r:11}],
+              backgroundColor: blue + 'bb',
+              borderColor: blue,
+              borderWidth: 1.5
+            },
+            {
+              label: 'Experimental',
+              data: [{x:30,y:70,r:8},{x:22,y:60,r:6},{x:35,y:78,r:9}],
+              backgroundColor: purple2 + 'bb',
+              borderColor: purple2,
+              borderWidth: 1.5
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top', labels: { padding: 12, usePointStyle: true, pointStyleWidth: 8, color: tickColor } },
+            tooltip: {
+              backgroundColor: ttBg, titleColor: headColor, bodyColor: defColor,
+              borderColor: accent + '55', borderWidth: 1, padding: 10, cornerRadius: 6,
+              callbacks: { label: ctx => ` ${ctx.dataset.label}: Risk ${ctx.raw.x}%, Value ${ctx.raw.y}%, Size ${ctx.raw.r * 7}k` }
+            }
+          },
+          scales: {
+            x: {
+              title: { display: true, text: 'Risk Score %', color: tickColor, font: { size: 11 } },
+              grid: { color: gridColor }, border: { display: false }, ticks: { color: tickColor }, min: 0, max: 100
+            },
+            y: {
+              title: { display: true, text: 'Business Value %', color: tickColor, font: { size: 11 } },
+              grid: { color: gridColor }, border: { display: false, dash: [4,4] }, ticks: { color: tickColor }, min: 0, max: 100
+            }
+          }
+        }
+      }));
+    }
+
+    // ── HORIZONTAL BAR — Conversion Funnel / Sales Pipeline Stages ───────────
+    const funnelCtx = document.getElementById('chart-funnel');
+    if (funnelCtx) {
+      const funnelColors = [accent, blue, amber, '#ec4899', '#8b5cf6'];
+      _portfolioCharts.push(new Chart(funnelCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Leads', 'Qualified', 'Proposals', 'Negotiation', 'Closed'],
+          datasets: [{
+            label: 'Count',
+            data: [1200, 760, 420, 210, 98],
+            backgroundColor: funnelColors.map(c => c + 'cc'),
+            borderColor: funnelColors,
+            borderWidth: 1.5,
+            borderRadius: 4,
+            borderSkipped: false
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: ttBg, titleColor: headColor, bodyColor: defColor,
+              borderColor: accent + '55', borderWidth: 1, padding: 10, cornerRadius: 6,
+              callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw.toLocaleString()} records` }
+            }
+          },
+          scales: {
+            x: { grid: { color: gridColor }, border: { display: false }, ticks: { color: tickColor } },
+            y: { grid: { display: false }, border: { display: false }, ticks: { color: tickColor } }
+          }
+        }
+      }));
+    }
   }
 
   window.addEventListener('load', initPortfolioCharts);

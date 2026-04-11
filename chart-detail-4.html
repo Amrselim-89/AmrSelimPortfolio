@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Customer Segmentation – Chart Details | Amr Selim Portfolio</title>
+  <meta content="Scatter plot visualizing customer segments by engagement and retention scores" name="description">
+
+  <!-- Favicons -->
+  <link href="assets/img/img.ico" rel="icon">
+  <link href="assets/img/img.ico" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="assets/img/img.jpeg" alt="" class="img-fluid rounded-circle">
+    </div>
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Amr Selim</h1>
+    </a>
+    <div class="social-links text-center">
+      <a href="https://www.linkedin.com/in/amrabdullah89/" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.facebook.com/Amr.Selim89" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/amrabdullah89/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/amrabdullah89/" class="google-plus"><i class="bi bi-skype"></i></a>
+      <a href="https://www.linkedin.com/in/amrabdullah89/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Chart Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li class="current">Customer Segmentation</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div style="position:relative;background:var(--surface-color);border-radius:8px;padding:24px;height:400px;">
+              <canvas id="detail-chart-4" aria-label="Customer Segmentation scatter chart"></canvas>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Chart Information</h3>
+              <ul>
+                <li><strong>Chart Type</strong>: Scatter Plot</li>
+                <li><strong>Category</strong>: Customer Analytics</li>
+                <li><strong>Segments</strong>: Premium · Standard · At-Risk</li>
+                <li><strong>Tool</strong>: Chart.js / Python (matplotlib)</li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>Customer Segmentation: Engagement vs Retention</h2>
+              <p>
+                This scatter plot maps individual customers across three strategic segments —
+                <strong>Premium</strong>, <strong>Standard</strong>, and <strong>At-Risk</strong> — using their
+                Engagement Score (X-axis) and Retention Score (Y-axis) as coordinates.
+              </p>
+              <p>
+                ✅ <strong>Three-Cluster Layout:</strong> Color-coded clusters make it immediately obvious which
+                customers are high-value and well-retained vs. those at risk of churn.<br>
+                ✅ <strong>Actionable Quadrants:</strong> The top-right quadrant identifies loyal, engaged Premium
+                customers; the bottom-left flags At-Risk customers needing immediate re-engagement campaigns.<br>
+                ✅ <strong>No Aggregation Loss:</strong> Scatter plots preserve individual data-point granularity
+                that bar or line charts would obscure through grouping.<br>
+                ✅ <strong>Hover Tooltips:</strong> Each point reveals its exact engagement and retention scores
+                on hover, enabling data-driven conversations during stakeholder presentations.
+              </p>
+              <p>
+                Customer segmentation scatter plots are foundational in CRM analytics, loyalty programs, and
+                churn-prediction models to inform targeted intervention strategies.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="credits">
+        Designed by <a href="https://www.linkedin.com/in/amrabdullah89/">Amr Selim</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">
+    <i class="bi bi-moon-stars-fill"></i>
+  </button>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    window.addEventListener('load', function () {
+      if (typeof Chart === 'undefined') return;
+      const style     = getComputedStyle(document.documentElement);
+      const accent    = style.getPropertyValue('--accent-color').trim()  || '#0f766e';
+      const defColor  = style.getPropertyValue('--default-color').trim() || '#142033';
+      const headColor = style.getPropertyValue('--heading-color').trim() || '#0c182c';
+      const isDark    = document.documentElement.getAttribute('data-theme') === 'dark';
+      const gridColor = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.08)';
+      const tickColor = isDark ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.48)';
+      const ttBg      = isDark ? 'rgba(11,28,51,0.96)' : 'rgba(255,255,255,0.97)';
+      const blue      = '#3b82f6';
+      const red       = '#ef4444';
+
+      new Chart(document.getElementById('detail-chart-4'), {
+        type: 'scatter',
+        data: {
+          datasets: [
+            {
+              label: 'Premium',
+              data: [{x:82,y:91},{x:78,y:85},{x:90,y:88},{x:86,y:94},{x:75,y:80},{x:92,y:96},{x:84,y:89}],
+              backgroundColor: accent + 'cc', pointRadius: 8, pointHoverRadius: 11
+            },
+            {
+              label: 'Standard',
+              data: [{x:55,y:60},{x:62,y:55},{x:48,y:65},{x:70,y:58},{x:58,y:72},{x:65,y:62},{x:52,y:68}],
+              backgroundColor: blue + 'cc', pointRadius: 8, pointHoverRadius: 11
+            },
+            {
+              label: 'At-Risk',
+              data: [{x:30,y:28},{x:22,y:35},{x:38,y:20},{x:25,y:42},{x:15,y:30},{x:35,y:25},{x:18,y:38}],
+              backgroundColor: red + 'cc', pointRadius: 8, pointHoverRadius: 11
+            }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top', labels: { padding: 16, usePointStyle: true, pointStyleWidth: 10, color: tickColor } },
+            tooltip: {
+              backgroundColor: ttBg, titleColor: headColor, bodyColor: defColor,
+              borderColor: accent + '55', borderWidth: 1, padding: 12, cornerRadius: 8,
+              callbacks: { label: ctx => ` ${ctx.dataset.label}: Engagement ${ctx.raw.x}% · Retention ${ctx.raw.y}%` }
+            }
+          },
+          scales: {
+            x: {
+              title: { display: true, text: 'Engagement Score (%)', color: tickColor, font: { size: 12 } },
+              grid: { color: gridColor }, border: { display: false }, ticks: { color: tickColor }, min: 0, max: 100
+            },
+            y: {
+              title: { display: true, text: 'Retention Score (%)', color: tickColor, font: { size: 12 } },
+              grid: { color: gridColor }, border: { display: false, dash: [4,4] }, ticks: { color: tickColor }, min: 0, max: 100
+            }
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

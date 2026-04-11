@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Monthly Revenue – Chart Details | Amr Selim Portfolio</title>
+  <meta content="Combo bar + line chart showing Monthly Revenue vs Target with MoM growth overlay" name="description">
+
+  <!-- Favicons -->
+  <link href="assets/img/img.ico" rel="icon">
+  <link href="assets/img/img.ico" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Theme init: apply saved preference before paint to avoid flash -->
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="assets/img/img.jpeg" alt="" class="img-fluid rounded-circle">
+    </div>
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Amr Selim</h1>
+    </a>
+    <div class="social-links text-center">
+      <a href="https://www.linkedin.com/in/amrabdullah89/" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.facebook.com/Amr.Selim89" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/amrabdullah89/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/amrabdullah89/" class="google-plus"><i class="bi bi-skype"></i></a>
+      <a href="https://www.linkedin.com/in/amrabdullah89/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Chart Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li class="current">Monthly Revenue</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <!-- Large Interactive Chart -->
+          <div class="col-lg-8">
+            <div class="portfolio-details-chart-wrap" style="position:relative;background:var(--surface-color);border-radius:8px;padding:24px;height:400px;">
+              <canvas id="detail-chart-1" aria-label="Monthly Revenue vs Target combo chart"></canvas>
+            </div>
+          </div>
+
+          <!-- Info Panel -->
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Chart Information</h3>
+              <ul>
+                <li><strong>Chart Type</strong>: Combo Bar + Line</li>
+                <li><strong>Category</strong>: Revenue Analytics</li>
+                <li><strong>Data Period</strong>: Jan – Jun 2024</li>
+                <li><strong>Tool</strong>: Chart.js / Power BI</li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>Monthly Revenue vs Target</h2>
+              <p>
+                This combo chart overlays <strong>Revenue ($k)</strong> and <strong>Target ($k)</strong> as grouped
+                bars, with a secondary <strong>Month-over-Month Growth %</strong> line plotted on the right axis.
+              </p>
+              <p>
+                ✅ <strong>Revenue Bars:</strong> Show actual revenue per month with a gradient fill that visually
+                communicates magnitude at a glance.<br>
+                ✅ <strong>Target Bars:</strong> Semi-transparent bars behind the revenue bars let stakeholders
+                instantly identify over- and under-performance.<br>
+                ✅ <strong>MoM Growth Line:</strong> The amber overlay line tracks the percentage change month-to-month,
+                providing momentum context without cluttering the primary axis.<br>
+                ✅ <strong>Dual-Axis Design:</strong> Separating revenue ($k) and growth (%) onto independent axes
+                preserves scale integrity and eliminates misleading comparisons.
+              </p>
+              <p>
+                This visualization pattern is widely used in executive dashboards to communicate both absolute
+                performance and the rate-of-change trend in a single compact view.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="credits">
+        Designed by <a href="https://www.linkedin.com/in/amrabdullah89/">Amr Selim</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">
+    <i class="bi bi-moon-stars-fill"></i>
+  </button>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    window.addEventListener('load', function () {
+      if (typeof Chart === 'undefined') return;
+      const style     = getComputedStyle(document.documentElement);
+      const accent    = style.getPropertyValue('--accent-color').trim()  || '#0f766e';
+      const defColor  = style.getPropertyValue('--default-color').trim() || '#142033';
+      const headColor = style.getPropertyValue('--heading-color').trim() || '#0c182c';
+      const surface   = style.getPropertyValue('--surface-color').trim() || '#ffffff';
+      const isDark    = document.documentElement.getAttribute('data-theme') === 'dark';
+      const gridColor = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.08)';
+      const tickColor = isDark ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.48)';
+      const ttBg      = isDark ? 'rgba(11,28,51,0.96)' : 'rgba(255,255,255,0.97)';
+      const amber     = '#f59e0b';
+      const secondary = isDark ? 'rgba(255,255,255,0.12)' : 'rgba(15,118,110,0.15)';
+
+      const ctx   = document.getElementById('detail-chart-1');
+      const ctx2d = ctx.getContext('2d');
+      const barGrad = ctx2d.createLinearGradient(0, 0, 0, 320);
+      barGrad.addColorStop(0, accent);
+      barGrad.addColorStop(1, accent + '77');
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+          datasets: [
+            {
+              type: 'bar', label: 'Revenue ($k)',
+              data: [420, 510, 390, 630, 580, 710],
+              backgroundColor: barGrad, borderRadius: { topLeft: 6, topRight: 6 },
+              borderSkipped: false, yAxisID: 'y', order: 2
+            },
+            {
+              type: 'bar', label: 'Target ($k)',
+              data: [450, 480, 450, 600, 550, 680],
+              backgroundColor: secondary, borderRadius: { topLeft: 6, topRight: 6 },
+              borderSkipped: false, yAxisID: 'y', order: 3
+            },
+            {
+              type: 'line', label: 'MoM Growth %',
+              data: [null, 21.4, -23.5, 61.5, -7.9, 22.4],
+              borderColor: amber, backgroundColor: 'transparent',
+              tension: 0.45, pointRadius: 6, pointHoverRadius: 8,
+              pointBackgroundColor: amber, pointBorderColor: surface, pointBorderWidth: 2,
+              borderWidth: 2.5, yAxisID: 'y2', order: 1, spanGaps: false
+            }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { position: 'top', labels: { padding: 16, usePointStyle: true, pointStyleWidth: 10, color: tickColor } },
+            tooltip: {
+              backgroundColor: ttBg, titleColor: headColor, bodyColor: defColor,
+              borderColor: accent + '55', borderWidth: 1, padding: 12, cornerRadius: 8,
+              callbacks: { label: ctx => ctx.datasetIndex === 2 ? ` Growth: ${ctx.raw}%` : ` ${ctx.dataset.label}: $${ctx.raw}k` }
+            }
+          },
+          scales: {
+            x: { grid: { display: false }, border: { display: false }, ticks: { color: tickColor } },
+            y: { position: 'left', grid: { color: gridColor }, border: { display: false, dash: [4,4] }, ticks: { color: tickColor, callback: v => '$' + v + 'k' } },
+            y2: { position: 'right', grid: { display: false }, border: { display: false }, ticks: { color: amber, callback: v => v + '%' } }
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Market Share – Chart Details | Amr Selim Portfolio</title>
+  <meta content="Polar area chart showing market share distribution across six industry sectors" name="description">
+
+  <!-- Favicons -->
+  <link href="assets/img/img.ico" rel="icon">
+  <link href="assets/img/img.ico" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="assets/img/img.jpeg" alt="" class="img-fluid rounded-circle">
+    </div>
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Amr Selim</h1>
+    </a>
+    <div class="social-links text-center">
+      <a href="https://www.linkedin.com/in/amrabdullah89/" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.facebook.com/Amr.Selim89" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/amrabdullah89/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/amrabdullah89/" class="google-plus"><i class="bi bi-skype"></i></a>
+      <a href="https://www.linkedin.com/in/amrabdullah89/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Chart Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li class="current">Market Share</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div style="position:relative;background:var(--surface-color);border-radius:8px;padding:24px;height:420px;">
+              <canvas id="detail-chart-6" aria-label="Market Share polar area chart"></canvas>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Chart Information</h3>
+              <ul>
+                <li><strong>Chart Type</strong>: Polar Area</li>
+                <li><strong>Category</strong>: Market Intelligence</li>
+                <li><strong>Sectors</strong>: 6 Industry Verticals</li>
+                <li><strong>Tool</strong>: Chart.js / Power BI</li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>Market Share by Industry Sector</h2>
+              <p>
+                This polar area chart distributes total market share across six industry verticals —
+                <strong>Banking, Retail, Healthcare, Telecom, Energy,</strong> and <strong>Logistics</strong> —
+                where both the angle and the radius of each segment encode the percentage value.
+              </p>
+              <p>
+                ✅ <strong>Dual Encoding:</strong> Unlike a standard pie chart, polar area charts encode value
+                in the radius as well as the arc angle, making small differences between segments easier to
+                perceive at a glance.<br>
+                ✅ <strong>Six-Color Palette:</strong> Each sector receives a distinct hue from the design-system
+                palette, ensuring clear differentiation without relying on pattern fills.<br>
+                ✅ <strong>Animated Rotation:</strong> An easeInOutQuart entrance animation draws stakeholder
+                attention and emphasises the proportional differences as sectors grow in.<br>
+                ✅ <strong>Compact Bottom Legend:</strong> Point-style legend circles minimise vertical space so
+                the chart fits comfortably within a standard dashboard card height.
+              </p>
+              <p>
+                Polar area charts are particularly effective when comparing a moderate number of categories
+                (4–8) where the visual variety of the radius encoding adds analytical clarity beyond what a
+                simple pie achieves.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="credits">
+        Designed by <a href="https://www.linkedin.com/in/amrabdullah89/">Amr Selim</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">
+    <i class="bi bi-moon-stars-fill"></i>
+  </button>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    window.addEventListener('load', function () {
+      if (typeof Chart === 'undefined') return;
+      const style     = getComputedStyle(document.documentElement);
+      const accent    = style.getPropertyValue('--accent-color').trim()  || '#0f766e';
+      const defColor  = style.getPropertyValue('--default-color').trim() || '#142033';
+      const headColor = style.getPropertyValue('--heading-color').trim() || '#0c182c';
+      const surface   = style.getPropertyValue('--surface-color').trim() || '#ffffff';
+      const isDark    = document.documentElement.getAttribute('data-theme') === 'dark';
+      const gridColor = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.08)';
+      const tickColor = isDark ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.48)';
+      const ttBg      = isDark ? 'rgba(11,28,51,0.96)' : 'rgba(255,255,255,0.97)';
+      const amber     = '#f59e0b';
+      const blue      = '#3b82f6';
+      const polarColors = [accent + 'dd', blue + 'dd', amber + 'dd', '#ec4899dd', '#8b5cf6dd', '#14b8a6dd'];
+
+      new Chart(document.getElementById('detail-chart-6'), {
+        type: 'polarArea',
+        data: {
+          labels: ['Banking', 'Retail', 'Healthcare', 'Telecom', 'Energy', 'Logistics'],
+          datasets: [{
+            data: [28, 19, 16, 14, 13, 10],
+            backgroundColor: polarColors,
+            borderColor: surface,
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          animation: { animateRotate: true, duration: 1000, easing: 'easeInOutQuart' },
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { padding: 10, boxWidth: 12, usePointStyle: true, pointStyle: 'circle', color: tickColor, font: { size: 11 } }
+            },
+            tooltip: {
+              backgroundColor: ttBg, titleColor: headColor, bodyColor: defColor,
+              borderColor: accent + '55', borderWidth: 1, padding: 12, cornerRadius: 8,
+              callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw}%` }
+            }
+          },
+          scales: {
+            r: {
+              grid: { color: gridColor },
+              ticks: { color: tickColor, backdropColor: 'transparent', font: { size: 10 } }
+            }
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

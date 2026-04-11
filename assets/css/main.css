@@ -1026,6 +1026,27 @@ section,
   margin: 3px 0 0;
 }
 
+.portfolio .portfolio-content.is-chart .portfolio-info {
+  pointer-events: none;
+}
+
+.portfolio .portfolio-content.is-chart .chart-details-link {
+  pointer-events: all;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.portfolio .portfolio-content.is-chart .chart-details-link:hover {
+  opacity: 0.75;
+}
+
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
