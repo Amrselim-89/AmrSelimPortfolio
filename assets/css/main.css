@@ -835,6 +835,14 @@ section,
   padding-bottom: 0;
 }
 
+.resume .resume-company-logo {
+  height: 32px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+
 .resume .resume-item::before {
   content: "";
   position: absolute;
