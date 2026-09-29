@@ -168,6 +168,23 @@
   });
 
   /**
+   * Skills category filter
+   */
+  const skillsFilterBtns = document.querySelectorAll('.skills-filters li');
+  const skillsItems = document.querySelectorAll('.skills-content .progress');
+  skillsFilterBtns.forEach(function(filterBtn) {
+    filterBtn.addEventListener('click', function() {
+      document.querySelector('.skills-filters .filter-active').classList.remove('filter-active');
+      this.classList.add('filter-active');
+      const filter = this.getAttribute('data-filter');
+      skillsItems.forEach(function(item) {
+        const show = filter === '*' || item.classList.contains(filter);
+        item.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  /**
    * Init swiper sliders
    */
   function initSwiper() {
@@ -265,17 +282,17 @@
     _portfolioCharts = [];
 
     const style     = getComputedStyle(document.documentElement);
-    const accent    = style.getPropertyValue('--accent-color').trim()  || '#0f766e';
-    const defColor  = style.getPropertyValue('--default-color').trim() || '#142033';
-    const headColor = style.getPropertyValue('--heading-color').trim() || '#0c182c';
+    const accent    = style.getPropertyValue('--accent-color').trim()  || '#274C77';
+    const defColor  = style.getPropertyValue('--default-color').trim() || '#2c333d';
+    const headColor = style.getPropertyValue('--heading-color').trim() || '#16233a';
     const surface   = style.getPropertyValue('--surface-color').trim() || '#ffffff';
     const isDark    = document.documentElement.getAttribute('data-theme') === 'dark';
     const gridColor = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.08)';
     const tickColor = isDark ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.48)';
     const ttBg      = isDark ? 'rgba(11,28,51,0.96)'    : 'rgba(255,255,255,0.97)';
-    const amber     = '#f59e0b';
-    const blue      = '#3b82f6';
-    const secondary = isDark ? 'rgba(255,255,255,0.12)' : 'rgba(15,118,110,0.15)';
+    const amber     = '#6096BA';
+    const blue      = '#8B8C89';
+    const secondary = isDark ? 'rgba(255,255,255,0.12)' : 'rgba(39,76,119,0.15)';
 
     Chart.defaults.color       = tickColor;
     Chart.defaults.font.family = style.getPropertyValue('--default-font').trim() || 'Manrope, sans-serif';
