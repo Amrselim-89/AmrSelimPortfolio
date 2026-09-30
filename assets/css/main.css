@@ -789,6 +789,11 @@ section,
 
   .hero-cta .btn {
     width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .hero-cta .btn:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -900,7 +905,7 @@ section,
 
 @media (max-width: 575px) {
   .about .section-title .about-expertise-table {
-    border-spacing: 0 8px;
+    border-spacing: 0;
   }
 
   .about .section-title .about-expertise-table tr,
@@ -909,8 +914,18 @@ section,
     width: 100%;
   }
 
+  /* border-spacing has no effect once rows/cells become block elements */
+  .about .section-title .about-expertise-table td {
+    margin-bottom: 5px;
+  }
+
+  .about .section-title .about-expertise-table tr:last-child td:last-child {
+    margin-bottom: 0;
+  }
+
   .about .section-title .about-expertise-table td:last-child:empty {
     display: none;
+    margin-bottom: 0;
   }
 }
 
